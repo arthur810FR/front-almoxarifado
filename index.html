@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almoxarifado - Gerenciamento de Produtos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Almoxarifado - Gerenciamento de Produtos</h1>
+
+    <div class="form-container">
+        <h2 id="form-title">Adicionar Produto</h2>
+        <form id="product-form">
+            <input type="hidden" id="product-id">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" placeholder="Nome do Produto" required>
+
+            <label for="quantity">Quantidade:</label>
+            <input type="number" id="quantity" placeholder="Quantidade" required>
+
+            <label for="price">Preço:</label>
+            <input type="number" id="price" placeholder="Preço" step="0.01" required>
+
+            <label for="description">Descrição:</label>
+            <textarea id="description" placeholder="Descrição do Produto" required></textarea>
+
+            <button type="submit">Salvar</button>
+            <button type="button" id="cancel-button" style="display: none;">Cancelar</button>
+        </form>
+    </div>
+
+    <h2>Lista de Produtos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Descrição</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="product-list">
+        </tbody>
+    </table>
+
+    <div id="message"></div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <p>Tem certeza que deseja deletar este produto?</p>
+            <button id="confirmDelete" class="confirm-btn">Sim</button>
+            <button id="cancelDelete" class="cancel-btn">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
